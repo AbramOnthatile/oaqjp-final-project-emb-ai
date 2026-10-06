@@ -8,6 +8,7 @@ class TestEmotionDetector(unittest.TestCase):
     @patch("emotion_detection.requests.post")
     def test_emotion_detector(self, mock_post):
         mock_response = Mock()
+        mock_response.status_code = 200
 
         mock_response.json.return_value = {
             "emotionPredictions": [
